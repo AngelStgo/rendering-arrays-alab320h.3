@@ -13,11 +13,20 @@ function Learner() {
         <h3>Student id: {learners.id}</h3>
         <p><b>Bio:</b> {learners.bio}</p>
             <hr />
-        <h3>Scores: {learners.scores.date} {learners.scores.score}</h3>
-        </div>
-        
-        
-       </div> 
+
+            {learners.scores.map((score, index) => (
+              <div key={index} className="scoreDisplay">
+                <h3 >
+                <strong>Date:</strong> {score.date}
+                 <br />
+                  <strong>Score:</strong> {score.score}
+                  </h3> 
+              </div>
+              
+            )
+            )}
+        </div>  
+     </div> 
        
        
     ))
